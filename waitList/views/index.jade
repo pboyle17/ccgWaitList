@@ -2,12 +2,13 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
-  ul 1/3 No Limit Holdem
-    each player in players
-      if player.game
-        li= player.name +':'+player.game
-        button(type='button' class='delete'  id='#{player.id}') Delete #{player.name}
+  h2 Welcome to #{title}
+  hr
+  each player in players
+    p= player.name
+    p= player.game
+    button(type='button' class='delete'  id='#{player.id}') Delete #{player.name}
+    hr
 
   ul Add new Player:
     form(action='/', method="post")
@@ -23,3 +24,5 @@ block content
   button(id='table') Create a New Table
 
   #message
+
+  a(href='/tables') Go to the tables view

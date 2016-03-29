@@ -55,6 +55,26 @@ router.get('/tables',function(req,res){
   });
 });
 
+router.post('/tables',function(req,res){
+  table.create(req.body,function(err,table){
+    if(err){
+      console.log(err);
+    } else {
+      res.json(table);
+    }
+  });
+});
+
+router.delete('/tables/:id',function(req,res){
+  table.findByIdAndRemove(req.params.id,req.body,function(err,table){
+    if(err){
+      console.log(err);
+    } else {
+      res.json(table);
+    }
+  });
+});
+
 
 
 module.exports = router;

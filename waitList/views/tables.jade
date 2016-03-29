@@ -3,4 +3,13 @@ extends layout
 block content
 
 
-  #container Hello World this is the tables view
+  h1 CCG Cash Games Currently Running
+  hr
+
+  each table in tables
+    p= 'Table name: '+ table.name
+    p= 'Game name: '+table.game
+    p= 'Players: '+table.players
+    p= 'Table ID: '+table.id
+    button(class='deleteTable', id=table.id, type='button') Delete Table
+    hr

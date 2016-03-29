@@ -14,6 +14,19 @@ $(document).ready(function(){
     });
   });// end of .delete selector
 
+  $('.deleteTable').click(function(){
+    console.log('proceeding with deleting the table');
+    console.log(this.id);
+    $.ajax({
+      url:'/tables/'+this.id,
+      type:'DELETE',
+      success: function(data){
+        console.log('table successfully deleted');
+        window.location.reload();
+      }
+    });
+  });// end of .delete selector
+
   $('.reload').click(function(){
     console.log('reloading the page');
     window.location.reload();
