@@ -24,7 +24,7 @@ router.post('/',function(req,res){
       console.log(err);
     } else {
       console.log('post request made!');
-      res.json(player);
+      res.redirect('/');
     }
   });
 });
