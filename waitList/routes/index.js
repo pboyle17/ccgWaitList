@@ -1,10 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var model = require('../models/Player');
+var player = require('../models/Player');
+var table = require('../models/Table');
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  model.find(function(err,players){
+
+  player.find(function(err,players){
     if(err){
       console.log(err);
     } else {
@@ -19,7 +21,7 @@ router.get('/', function(req, res) {
 });
 
 router.post('/',function(req,res){
-  model.create(req.body,function(err, player){
+  player.create(req.body,function(err, player){
     if(err){
       console.log(err);
     } else {
@@ -30,7 +32,7 @@ router.post('/',function(req,res){
 });
 
 router.delete('/:id',function(req,res){
-  model.findByIdAndRemove(req.params.id,req.body,function(err,player){
+  player.findByIdAndRemove(req.params.id,req.body,function(err,player){
       if(err){
         console.log(err);
       } else {
@@ -39,5 +41,20 @@ router.delete('/:id',function(req,res){
       }
   });
 });
+
+router.get('/tables',function(req,res){
+  table.find(function(err,tables){
+    if(err){
+      console.log(err);
+    } else {
+      res.render('tables',{
+        title:'Cash Games Running',
+        tables:tables
+      });
+    }
+  });
+});
+
+
 
 module.exports = router;

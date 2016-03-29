@@ -24,9 +24,9 @@ $(document).ready(function(){
   });
 
   $('#add').click(function(){
-    var time = document.getElementById('time');
-    console.log(time);
-    console.log('set the new date');
+    var form = document.getElementById('name');
+    console.log(form);
   });
+
 
 });// end of document.ready
