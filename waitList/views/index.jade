@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  ul 1/3 No Limit Holdem
+    each player in players
+      if player.game
+        li= player.name +':'+player.game+player.id
+        form(action='/:#{player.id}' method='delete')
+          input(type='submit',value='Delete #{player.name}')
+
+  ul Add new Player
+    form(action='/' method='post')
+    input(type='text', name='name')
+    input(type='submit' value='add')
