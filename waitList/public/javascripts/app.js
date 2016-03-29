@@ -19,4 +19,14 @@ $(document).ready(function(){
     window.location.reload();
   });
 
+  $('#table').click(function(){
+    console.log('why you click me');
+  });
+
+  $('#add').click(function(){
+    var time = document.getElementById('time');
+    console.log(time);
+    console.log('set the new date');
+  });
+
 });// end of document.ready
