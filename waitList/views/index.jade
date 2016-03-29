@@ -7,10 +7,12 @@ block content
     each player in players
       if player.game
         li= player.name +':'+player.game+player.id
-        form(action='/:#{player.id}' method='delete')
-          input(type='submit',value='Delete #{player.name}')
+        button(type='button' class='delete'  id='#{player.id}') Delete #{player.name}
 
-  ul Add new Player
-    form(action='/' method='post')
-    input(type='text', name='name')
-    input(type='submit' value='add')
+  ul Add new Player:
+    form(action='/', method="post")
+      input(type='text', name='name', placeholder='Name')
+      input(type='text', name='game', placeholder='Game')
+      input(id='add' type='submit' value='add')
+
+      button(type='button' id='delete') delete

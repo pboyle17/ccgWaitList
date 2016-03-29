@@ -8,15 +8,12 @@ router.get('/', function(req, res) {
     if(err){
       console.log(err);
     } else {
+      console.log('get request made');
+      console.log(req.body);
       res.render('index',{
         title:'CCG Poker Wait List',
         players:players
       });
-      console.log(players[0].game)
-      for (var player in players) {
-        console.log(players[player].name);
-      }
-      // res.json(players)
     }
   });
 });
@@ -26,6 +23,7 @@ router.post('/',function(req,res){
     if(err){
       console.log(err);
     } else {
+      console.log('post request made!');
       res.json(player);
     }
   });
@@ -36,6 +34,7 @@ router.delete('/:id',function(req,res){
       if(err){
         console.log(err);
       } else {
+        console.log(req.body);
         res.json(player);
       }
   });
