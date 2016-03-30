@@ -7,11 +7,56 @@ a {
   color: #00B7FF;
 }
 
-
 .show {
   display:inline;
 }
 
 .hide {
   display:none;
+}
+
+input {
+  width:40%;
+  display:block;
+  text-align:center;
+  margin:10px auto;
+  border-radius:10px;
+}
+
+select {
+  margin:10px auto;
+  display:block;
+  width:40%;
+  border-radius:2px;
+
+}
+
+button {
+  border-radius:5px;
+}
+
+.container {
+  overflow:hidden;
+  text-align:center;
+
+}
+.resume {
+  float:right;
+}
+
+
+.delete {
+  float:right;
+}
+
+.tableChange {
+  float:right;
+}
+
+.background {
+  background-color:rgba(83, 82, 81,.4);
+}
+
+p {
+  font-size:2em;
 }
