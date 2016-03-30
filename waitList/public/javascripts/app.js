@@ -1,9 +1,7 @@
 $(document).ready(function(){
-  console.log('hello world!');
 
   $('.delete').click(function(){
-    console.log('why you click me?');
-    console.log(this.id);
+    $('#message').html('removing player from wait list .....');
     $.ajax({
       url:'/'+this.id,
       type:'DELETE',
@@ -27,10 +25,6 @@ $(document).ready(function(){
     });
   });// end of .delete selector
 
-  $('.reload').click(function(){
-    console.log('reloading the page');
-    window.location.reload();
-  });
 
   $('#table').click(function(){
     console.log('why you click me');
@@ -38,8 +32,11 @@ $(document).ready(function(){
 
   $('#add').click(function(){
     var form = document.getElementById('name');
-    console.log(form);
+    $('#message').html('adding player...'+form.value);
   });
 
+  $('.tableChange').click(function(){
+    console.log('yo bro... can i get a table change?');
+  });
 
 });// end of document.ready

@@ -4,11 +4,57 @@ block content
   h1= title
   h2 Welcome to #{title}
   hr
+  br
+  br
+  
+  h2 1/3 No Limit Holdem
+  hr
+  - var count = 0
   each player in players
-    p= player.name
-    p= player.game
-    button(type='button' class='delete'  id='#{player.id}') Delete #{player.name}
-    hr
+    if player.game == '1/3 NLHE'
+      -count++
+      p= player.name
+      p= player.game
+      button(type='button' class='delete'  id='#{player.id}') Delete #{player.name}
+      button(type='button' class='tableChange') Request Table change for #{player.name}
+      hr
+  if count == 0
+    p Open Seating
+  br
+  br
+
+
+  h2 1/2/5 Pot Limit Omaha
+  hr
+  - count = 0
+  each player in players
+    if player.game == '1/2/5 PLO'
+      -count++
+      p= player.name
+      p= player.game
+      button(type='button' class='delete'  id='#{player.id}') Delete #{player.name}
+      button(type='button' class='tableChange') Request Table change for #{player.name}
+      hr
+  if count == 0
+    p Open Seating
+  br
+  br
+
+  h2 1/1 No Limit Holdem
+  hr
+  - count = 0
+  each player in players
+    if player.game == '1/1 NLHE'
+      -count++
+      p= player.name
+      p= player.game
+      button(type='button' class='delete'  id='#{player.id}') Delete #{player.name}
+      button(type='button' class='tableChange') Request Table change for #{player.name}
+      hr
+  if count == 0
+    p Open Seating
+  br
+  br
 
   ul Add new Player:
     form(action='/', method="post")
@@ -20,9 +66,8 @@ block content
         option 2/5 NLHE
         input(id='time' type='hidden' name='time')
       input(id='add' type='submit' value='add')
-
-  button(id='table') Create a New Table
-
-  #message
-
   a(href='/tables') Go to the tables view
+  br
+  br
+  br
+  #message
