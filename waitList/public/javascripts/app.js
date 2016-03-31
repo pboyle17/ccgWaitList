@@ -1,12 +1,8 @@
 $(document).ready(function(){
 
   var scroll = function(){
-    console.log('scroll function initiated');
-    console.log(window.location.hash);
     if(window.location.hash =='#13NL'){
-      console.log('changing location');
       window.location.hash='#125PLO';
-      console.log(window.location.hash);
     } else if (window.location.hash == '#125PLO') {
       window.location.hash='#11NL';
     } else if(window.location.hash == '#11NL'){
@@ -27,7 +23,14 @@ $(document).ready(function(){
     window.location.hash = '#13NL';
     $('#message').addClass('alert-info');
     $('#message').html('scroll has been resumed');
-    scrollingPage();
+    setTimeout(function(){
+      $('#message').removeClass('alert-info');
+      $('#message').html('');
+    },3000);
+
+    scrollingPage=setInterval(function(){
+      scroll();
+    },5000);
   });
 
   $('.stop').click(function(){

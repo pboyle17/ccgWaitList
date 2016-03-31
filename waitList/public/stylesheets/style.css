@@ -46,6 +46,7 @@ button {
 
 
 .delete {
+  display:inline;
   float:right;
 }
 
@@ -59,4 +60,8 @@ button {
 
 p {
   font-size:2em;
+}
+
+.well {
+  text-align:center;
 }
