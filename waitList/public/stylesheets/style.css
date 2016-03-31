@@ -8,7 +8,7 @@ a {
 }
 
 .show {
-  display:inline;
+  display:block;
 }
 
 .hide {
@@ -36,7 +36,7 @@ button {
 }
 
 .container {
-  overflow:hidden;
+  overflow:scroll;
   text-align:center;
 
 }
@@ -44,7 +44,9 @@ button {
   float:right;
 }
 
-
+.stop {
+  float:left;
+}
 .delete {
   display:inline;
   float:right;
@@ -64,4 +66,25 @@ p {
 
 .well {
   text-align:center;
+}
+
+.addPlayer {
+  margin:0 auto;
+}
+.footer {
+  text-align:center;
+}
+.content {
+  padding:20px;
+  /*border:1px solid red;*/
+  margin:10px auto;
+  overflow-y:scroll;
+  height:600px;
+}
+.cover {
+  background-color:rgba(0, 0, 0, .5);
+  z-index:2;
+  height:100%;
+  width:100%;
+  position:absolute;
 }
